@@ -1,0 +1,1859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181103 22:40:54.943" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite id="s1" name="SmokeTest &amp; SanityTest">
+<suite source="C:\Users\rnavakoti\PycharmProjects\BonifyQATestRobot\TestSuites\SmokeTest.robot" id="s1-s1" name="SmokeTest">
+<kw type="setup" name="Set Up - Smoke Suite">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20181103 22:40:55.082" level="INFO">Opening browser 'chrome' to base url 'http://my.bonify.de'.</msg>
+<status status="PASS" endtime="20181103 22:41:03.415" starttime="20181103 22:40:55.081"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181103 22:41:03.536" starttime="20181103 22:41:03.415"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:03.536" starttime="20181103 22:40:55.081"></status>
+</kw>
+<test id="s1-s1-t1" name="Test Case Verify Page Titile">
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${Actual_Page_Title}</var>
+</assign>
+<msg timestamp="20181103 22:41:03.543" level="INFO">${Actual_Page_Title} = bonify</msg>
+<status status="PASS" endtime="20181103 22:41:03.543" starttime="20181103 22:41:03.537"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_Page_Title}</arg>
+<arg>${Actual_Page_Title}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:03.544" starttime="20181103 22:41:03.544"></status>
+</kw>
+<kw name="Capture webpage screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>TC_01_Page_Title</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:03.545" starttime="20181103 22:41:03.545"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:03.798" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_01_Page_Title.png"&gt;&lt;img src="Screenshots/Smoke/TC_01_Page_Title.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:03.798" starttime="20181103 22:41:03.546"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:03.798" starttime="20181103 22:41:03.545"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 01</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:03.799" critical="yes" starttime="20181103 22:41:03.536"></status>
+</test>
+<test id="s1-s1-t2" name="Test Case Verify Header Text">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Header_Text}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:03.835" level="INFO">Element 'xpath://div[@class='login-panel']/h1' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:03.835" starttime="20181103 22:41:03.802"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Header_Text}</arg>
+</arguments>
+<assign>
+<var>${Actual_Header_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:03.860" level="INFO">${Actual_Header_Text} = Willkommen bei bonify!</msg>
+<status status="PASS" endtime="20181103 22:41:03.860" starttime="20181103 22:41:03.836"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_Header_Text}</arg>
+<arg>${Actual_Header_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:03.861" starttime="20181103 22:41:03.861"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${Header_Text}</arg>
+<arg>TC_02_Header_Text</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:03.874" starttime="20181103 22:41:03.862"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:04.874" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:04.874" starttime="20181103 22:41:03.874"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:04.874" starttime="20181103 22:41:04.874"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:05.125" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_02_Header_Text.png"&gt;&lt;img src="Screenshots/Smoke/TC_02_Header_Text.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:05.125" starttime="20181103 22:41:04.875"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:05.125" starttime="20181103 22:41:03.861"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 02</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:05.126" critical="yes" starttime="20181103 22:41:03.801"></status>
+</test>
+<test id="s1-s1-t3" name="Test Case Verify User Name Field">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${User_name_Text_Box}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:05.158" level="INFO">Element 'xpath://input[@name='email']' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:05.158" starttime="20181103 22:41:05.128"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${User_name_Text_Box}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:05.182" starttime="20181103 22:41:05.159"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Username_default_Text}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:05.211" level="INFO">Element 'xpath://label[@for='email']' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:05.211" starttime="20181103 22:41:05.183"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Username_default_Text}</arg>
+</arguments>
+<assign>
+<var>${Actual_User_Name_Default_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:05.239" level="INFO">${Actual_User_Name_Default_Text} = Email / Benutzername</msg>
+<status status="PASS" endtime="20181103 22:41:05.239" starttime="20181103 22:41:05.212"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_User_Name_Default_Text}</arg>
+<arg>${Actual_User_Name_Default_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:05.240" starttime="20181103 22:41:05.239"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${User_name_Text_Box}</arg>
+<arg>TC_03_UserName_Text_Box</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:05.263" starttime="20181103 22:41:05.241"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:06.265" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:06.266" starttime="20181103 22:41:05.263"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:06.267" starttime="20181103 22:41:06.266"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:06.520" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_03_UserName_Text_Box.png"&gt;&lt;img src="Screenshots/Smoke/TC_03_UserName_Text_Box.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:06.520" starttime="20181103 22:41:06.267"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:06.520" starttime="20181103 22:41:05.240"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 03</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:06.521" critical="yes" starttime="20181103 22:41:05.128"></status>
+</test>
+<test id="s1-s1-t4" name="Test Case Verify Password Field">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Password_Text_Box}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:06.552" level="INFO">Element 'xpath://input[@name='password']' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:06.552" starttime="20181103 22:41:06.524"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Password_Text_Box}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:06.577" starttime="20181103 22:41:06.553"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Password_label}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:06.605" level="INFO">Element 'xpath://label[@for='password']' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:06.605" starttime="20181103 22:41:06.577"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Password_label}</arg>
+</arguments>
+<assign>
+<var>${Actual_Password_Default_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:06.630" level="INFO">${Actual_Password_Default_Text} = Passwort</msg>
+<status status="PASS" endtime="20181103 22:41:06.631" starttime="20181103 22:41:06.606"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_Password_Default_Text}</arg>
+<arg>${Actual_Password_Default_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:06.632" starttime="20181103 22:41:06.631"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${Password_label}</arg>
+<arg>TC_04_Pasword_Text_Box</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:06.645" starttime="20181103 22:41:06.632"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:07.646" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:07.646" starttime="20181103 22:41:06.646"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:07.646" starttime="20181103 22:41:07.646"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:07.889" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_04_Pasword_Text_Box.png"&gt;&lt;img src="Screenshots/Smoke/TC_04_Pasword_Text_Box.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:07.889" starttime="20181103 22:41:07.647"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:07.889" starttime="20181103 22:41:06.632"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 04</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:07.890" critical="yes" starttime="20181103 22:41:06.522"></status>
+</test>
+<test id="s1-s1-t5" name="Test Case Verify Forgot Password Link">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:07.925" level="INFO">Element 'xpath://a[contains(@href,'recover')]' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:07.925" starttime="20181103 22:41:07.892"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:07.950" starttime="20181103 22:41:07.926"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+</arguments>
+<assign>
+<var>${Actual_forgot_password_link_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:07.976" level="INFO">${Actual_forgot_password_link_Text} = Passwort vergessen?</msg>
+<status status="PASS" endtime="20181103 22:41:07.976" starttime="20181103 22:41:07.951"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_forgot_password_link_Text}</arg>
+<arg>${Actual_forgot_password_link_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:07.977" starttime="20181103 22:41:07.977"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+<arg>TC_05_ForgotPassword_Link</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:07.999" starttime="20181103 22:41:07.978"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:09.001" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:09.001" starttime="20181103 22:41:08.000"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:09.001" starttime="20181103 22:41:09.001"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:09.251" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_05_ForgotPassword_Link.png"&gt;&lt;img src="Screenshots/Smoke/TC_05_ForgotPassword_Link.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:09.252" starttime="20181103 22:41:09.002"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:09.252" starttime="20181103 22:41:07.978"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 05</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:09.252" critical="yes" starttime="20181103 22:41:07.892"></status>
+</test>
+<test id="s1-s1-t6" name="Test Case Verify Login Button">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Login_Button}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:09.282" level="INFO">Element 'xpath://button[@type='submit']' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:09.282" starttime="20181103 22:41:09.255"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Login_Button}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:09.308" starttime="20181103 22:41:09.283"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Login_Button}</arg>
+</arguments>
+<assign>
+<var>${Actual_Login_Button_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:09.342" level="INFO">${Actual_Login_Button_Text} = ANMELDUNG</msg>
+<status status="PASS" endtime="20181103 22:41:09.342" starttime="20181103 22:41:09.309"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_Login_Button_Text}</arg>
+<arg>${Actual_Login_Button_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:09.343" starttime="20181103 22:41:09.342"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${Login_Button}</arg>
+<arg>TC_06_Login_Button</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:09.361" starttime="20181103 22:41:09.345"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:10.362" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:10.362" starttime="20181103 22:41:09.361"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:10.363" starttime="20181103 22:41:10.362"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:10.625" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_06_Login_Button.png"&gt;&lt;img src="Screenshots/Smoke/TC_06_Login_Button.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:10.625" starttime="20181103 22:41:10.363"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:10.625" starttime="20181103 22:41:09.343"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 06</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:10.626" critical="yes" starttime="20181103 22:41:09.254"></status>
+</test>
+<test id="s1-s1-t7" name="Test Case Verify Register Button">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Register_Button}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:10.658" level="INFO">Element 'xpath://a[contains(@href,'register/email')]' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:10.658" starttime="20181103 22:41:10.629"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Register_Button}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:10.682" starttime="20181103 22:41:10.659"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Register_Button}</arg>
+</arguments>
+<assign>
+<var>${Actual_Register_Button_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:10.711" level="INFO">${Actual_Register_Button_Text} = NEU REGISTRIEREN</msg>
+<status status="PASS" endtime="20181103 22:41:10.711" starttime="20181103 22:41:10.683"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_Register_Button_Text}</arg>
+<arg>${Actual_Register_Button_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:10.712" starttime="20181103 22:41:10.711"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${Register_Button}</arg>
+<arg>TC_07_Register_Button</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:10.728" starttime="20181103 22:41:10.713"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:11.729" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:11.729" starttime="20181103 22:41:10.728"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:11.730" starttime="20181103 22:41:11.729"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:11.985" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_07_Register_Button.png"&gt;&lt;img src="Screenshots/Smoke/TC_07_Register_Button.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:11.985" starttime="20181103 22:41:11.730"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:11.985" starttime="20181103 22:41:10.712"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 07</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:11.986" critical="yes" starttime="20181103 22:41:10.628"></status>
+</test>
+<test id="s1-s1-t8" name="Test Case Verify impressum Link">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Impressum_Link}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:12.016" level="INFO">Element 'xpath://a[contains(@href,'bonify.de/impressum')]' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:12.017" starttime="20181103 22:41:11.988"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Impressum_Link}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:12.040" starttime="20181103 22:41:12.017"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Impressum_Link}</arg>
+</arguments>
+<assign>
+<var>${Actual_Impressum_link_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:12.067" level="INFO">${Actual_Impressum_link_Text} = Impressum</msg>
+<status status="PASS" endtime="20181103 22:41:12.067" starttime="20181103 22:41:12.041"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_Impressum_link_Text}</arg>
+<arg>${Actual_Impressum_link_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:12.068" starttime="20181103 22:41:12.068"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${Impressum_Link}</arg>
+<arg>TC_08_Impressum_Link</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:12.083" starttime="20181103 22:41:12.069"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:13.088" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:13.088" starttime="20181103 22:41:12.084"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:13.088" starttime="20181103 22:41:13.088"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:13.333" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_08_Impressum_Link.png"&gt;&lt;img src="Screenshots/Smoke/TC_08_Impressum_Link.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:13.334" starttime="20181103 22:41:13.089"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:13.334" starttime="20181103 22:41:12.069"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 08</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:13.335" critical="yes" starttime="20181103 22:41:11.988"></status>
+</test>
+<test id="s1-s1-t9" name="Test Case Verify AGB Link">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${AGB_Link}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:13.365" level="INFO">Element 'xpath://a[contains(@href,'bonify.de/agb')]' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:13.366" starttime="20181103 22:41:13.337"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${AGB_Link}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:13.390" starttime="20181103 22:41:13.366"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${AGB_Link}</arg>
+</arguments>
+<assign>
+<var>${Actual_AGB_link_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:13.416" level="INFO">${Actual_AGB_link_Text} = AGB</msg>
+<status status="PASS" endtime="20181103 22:41:13.416" starttime="20181103 22:41:13.391"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_AGB_link_Text}</arg>
+<arg>${Actual_AGB_link_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:13.417" starttime="20181103 22:41:13.417"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${AGB_Link}</arg>
+<arg>TC_09_AGB_link</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:13.432" starttime="20181103 22:41:13.419"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:14.434" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:14.434" starttime="20181103 22:41:13.433"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:14.435" starttime="20181103 22:41:14.434"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:14.676" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_09_AGB_link.png"&gt;&lt;img src="Screenshots/Smoke/TC_09_AGB_link.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:14.677" starttime="20181103 22:41:14.435"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:14.677" starttime="20181103 22:41:13.418"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 09</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:14.677" critical="yes" starttime="20181103 22:41:13.336"></status>
+</test>
+<test id="s1-s1-t10" name="Test Case Verify Datenschutz Link">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Datenschutz_Link}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:14.708" level="INFO">Element 'xpath://a[contains(@href,'bonify.de/datenschutz')]' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:14.709" starttime="20181103 22:41:14.680"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Datenschutz_Link}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:14.735" starttime="20181103 22:41:14.709"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Datenschutz_Link}</arg>
+</arguments>
+<assign>
+<var>${Actual_Datenschutz_link_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:14.760" level="INFO">${Actual_Datenschutz_link_Text} = Datenschutz</msg>
+<status status="PASS" endtime="20181103 22:41:14.760" starttime="20181103 22:41:14.735"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_Datenschutz_link_Text}</arg>
+<arg>${Actual_Datenschutz_link_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:14.761" starttime="20181103 22:41:14.761"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${Datenschutz_Link}</arg>
+<arg>TC_10_Datenschutz_link</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:14.776" starttime="20181103 22:41:14.762"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:15.779" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:15.779" starttime="20181103 22:41:14.776"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:15.780" starttime="20181103 22:41:15.779"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:16.030" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_10_Datenschutz_link.png"&gt;&lt;img src="Screenshots/Smoke/TC_10_Datenschutz_link.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:16.030" starttime="20181103 22:41:15.780"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:16.030" starttime="20181103 22:41:14.762"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 10</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:16.031" critical="yes" starttime="20181103 22:41:14.679"></status>
+</test>
+<test id="s1-s1-t11" name="Test Case Verify Footer Text">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Footer_Text}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:16.063" level="INFO">Element 'xpath://footer/div' is displayed.</msg>
+<status status="PASS" endtime="20181103 22:41:16.063" starttime="20181103 22:41:16.033"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Footer_Text}</arg>
+</arguments>
+<assign>
+<var>${Actual_Footer_Text}</var>
+</assign>
+<msg timestamp="20181103 22:41:16.088" level="INFO">${Actual_Footer_Text} = Für die Sicherheit Deiner Daten arbeitet bonify mit:</msg>
+<status status="PASS" endtime="20181103 22:41:16.088" starttime="20181103 22:41:16.063"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_Footer_Text}</arg>
+<arg>${Actual_Footer_Text}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:16.089" starttime="20181103 22:41:16.089"></status>
+</kw>
+<kw name="Focus on element and take screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>${Footer_Text}</arg>
+<arg>TC_11_Footer_Text</arg>
+<arg>${Smoke_SS_Path}</arg>
+</arguments>
+<kw name="Set Focus To Element" library="Selenium2Library">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${ele}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:16.103" starttime="20181103 22:41:16.090"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:17.103" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:17.103" starttime="20181103 22:41:16.103"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:17.103" starttime="20181103 22:41:17.103"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:17.343" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Smoke/TC_11_Footer_Text.png"&gt;&lt;img src="Screenshots/Smoke/TC_11_Footer_Text.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:17.343" starttime="20181103 22:41:17.104"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:17.344" starttime="20181103 22:41:16.090"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+<tag>TC 11</tag>
+<tag>UI</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:17.344" critical="yes" starttime="20181103 22:41:16.033"></status>
+</test>
+<kw type="teardown" name="Tear Down - Smoke Suite">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181103 22:41:19.543" starttime="20181103 22:41:17.347"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:19.544" starttime="20181103 22:41:17.347"></status>
+</kw>
+<doc>This file is the collection all the Smoke test cases
+Teminal command to run the test suite :
+robot -d OptionalTest &lt;BonfiyQATestRobot folder path&gt;/TestSuites/SmokeTest.robot
+Output screenshots are stored in '/Screenshots/Smoke' folder in the project
+Log &amp; Reports are generated in '/result' folder in the project</doc>
+<status status="PASS" endtime="20181103 22:41:19.544" starttime="20181103 22:40:54.967"></status>
+</suite>
+<suite source="C:\Users\rnavakoti\PycharmProjects\BonifyQATestRobot\TestSuites\SanityTest.robot" id="s1-s2" name="SanityTest">
+<kw type="setup" name="Set Up - Smoke Suite">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:19.568" level="INFO">Opening browser 'chrome' to base url 'http://my.bonify.de'.</msg>
+<status status="PASS" endtime="20181103 22:41:26.632" starttime="20181103 22:41:19.568"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181103 22:41:26.748" starttime="20181103 22:41:26.632"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:26.748" starttime="20181103 22:41:19.567"></status>
+</kw>
+<test id="s1-s2-t1" name="Test Case Verify Login With Valid Credentials">
+<kw name="On LoginPage Enter User Name" library="LoginPage">
+<arguments>
+<arg>${TC_01_User_Name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${User_name_Text_Box}</arg>
+<arg>timeout=10s</arg>
+<arg>error=User Name Text Box is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:26.779" starttime="20181103 22:41:26.750"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${User_name_Text_Box}</arg>
+<arg>timeout=10s</arg>
+<arg>error=User Name Text Box is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:26.804" starttime="20181103 22:41:26.779"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${User_name_Text_Box}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:26.834" starttime="20181103 22:41:26.804"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${User_name_Text_Box}</arg>
+<arg>${User_Name}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:26.835" level="INFO">Typing text 'rajaprabhas455@gmail.com' into text field 'xpath://input[@name='email']'.</msg>
+<status status="PASS" endtime="20181103 22:41:27.054" starttime="20181103 22:41:26.835"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:27.054" starttime="20181103 22:41:26.749"></status>
+</kw>
+<kw name="On LoginPage Enter Password" library="LoginPage">
+<arguments>
+<arg>${TC_01_Password}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Password_Text_Box}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Password Text Box is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:27.083" starttime="20181103 22:41:27.055"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Password_Text_Box}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Password Text Box is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:27.103" starttime="20181103 22:41:27.083"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${Password_Text_Box}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:27.132" starttime="20181103 22:41:27.103"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Password_Text_Box}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:27.133" level="INFO">Typing text 'Prabhas@5' into text field 'xpath://input[@name='password']'.</msg>
+<status status="PASS" endtime="20181103 22:41:27.243" starttime="20181103 22:41:27.132"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:27.244" starttime="20181103 22:41:27.054"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:28.246" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181103 22:41:28.246" starttime="20181103 22:41:27.244"></status>
+</kw>
+<kw name="Capture webpage screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>Tc_01_Details_Entered</arg>
+<arg>${Sanity_SS_Path}</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:28.247" starttime="20181103 22:41:28.247"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:28.512" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Sanity/Tc_01_Details_Entered.png"&gt;&lt;img src="Screenshots/Sanity/Tc_01_Details_Entered.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:28.512" starttime="20181103 22:41:28.247"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:28.513" starttime="20181103 22:41:28.246"></status>
+</kw>
+<kw name="On LoginPage Click On Login Button" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Login_Button}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Login Button is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:28.541" starttime="20181103 22:41:28.514"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Login_Button}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Login Button is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:28.564" starttime="20181103 22:41:28.541"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Login_Button}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:28.565" level="INFO">Clicking element 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" endtime="20181103 22:41:28.627" starttime="20181103 22:41:28.565"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:28.627" starttime="20181103 22:41:28.513"></status>
+</kw>
+<kw name="Verify User Navigated To Dashboard Page" library="LoginPage">
+<arguments>
+<arg>${TC_01_Expected_User_Name_On_Dashboard_Page}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${User_name_Menu_Dropdown}</arg>
+<arg>timeout=10s</arg>
+<arg>error=User Dropdown button on dashboard is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:29.550" starttime="20181103 22:41:28.628"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${User_name_Menu_Dropdown}</arg>
+<arg>timeout=10s</arg>
+<arg>error=User Dropdown button on dashboard is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:29.585" starttime="20181103 22:41:29.551"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current browser URL.</doc>
+<assign>
+<var>${Current_Page_URL}</var>
+</assign>
+<msg timestamp="20181103 22:41:29.591" level="INFO">${Current_Page_URL} = https://my.bonify.de/</msg>
+<status status="PASS" endtime="20181103 22:41:29.591" starttime="20181103 22:41:29.585"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Dashboard_Page_URL}</arg>
+<arg>${Current_Page_URL}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:29.592" starttime="20181103 22:41:29.591"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${User_name_Menu_Dropdown}</arg>
+</arguments>
+<assign>
+<var>${Actual_User_Name_on_Dashboard}</var>
+</assign>
+<msg timestamp="20181103 22:41:29.629" level="INFO">${Actual_User_Name_on_Dashboard} = Rajashekar Navakoti</msg>
+<status status="PASS" endtime="20181103 22:41:29.629" starttime="20181103 22:41:29.593"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Expected_User_Name_On_Dashboard}</arg>
+<arg>${Actual_User_Name_on_Dashboard}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:29.630" starttime="20181103 22:41:29.630"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:29.631" starttime="20181103 22:41:28.628"></status>
+</kw>
+<kw name="Capture webpage screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>Tc_01_Dashboard_Page</arg>
+<arg>${Sanity_SS_Path}</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:29.633" starttime="20181103 22:41:29.632"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:29.966" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Sanity/Tc_01_Dashboard_Page.png"&gt;&lt;img src="Screenshots/Sanity/Tc_01_Dashboard_Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:29.966" starttime="20181103 22:41:29.633"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:29.967" starttime="20181103 22:41:29.631"></status>
+</kw>
+<kw name="Logout" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Expand_Icon_At_User_ID}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Expand icon is not visible is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:29.997" starttime="20181103 22:41:29.968"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Expand_Icon_At_User_ID}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:29.997" level="INFO">Clicking element 'xpath://i[@class='right ico-bonify-expand']'.</msg>
+<status status="PASS" endtime="20181103 22:41:30.049" starttime="20181103 22:41:29.997"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:32.049" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181103 22:41:32.049" starttime="20181103 22:41:30.049"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Signout_Button}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Signout button is not visible is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:32.089" starttime="20181103 22:41:32.050"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Signout_Button}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:32.090" level="INFO">Clicking element 'xpath://*[@id="main-body"]/ul[1]/li[4]/button[1]'.</msg>
+<status status="PASS" endtime="20181103 22:41:32.142" starttime="20181103 22:41:32.090"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181103 22:41:34.144" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181103 22:41:34.144" starttime="20181103 22:41:32.142"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>5s</arg>
+<arg>Location Should be</arg>
+<arg>${Login_Page_URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Login_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:34.149" level="INFO">Current location is 'https://my.bonify.de/login?next=/'.</msg>
+<status status="PASS" endtime="20181103 22:41:34.150" starttime="20181103 22:41:34.145"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:34.150" starttime="20181103 22:41:34.144"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:34.150" starttime="20181103 22:41:29.967"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+<tag>Sanity</tag>
+<tag>TC 01</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:34.150" critical="yes" starttime="20181103 22:41:26.748"></status>
+</test>
+<test id="s1-s2-t2" name="Test Case Verify Forgot Password Navigation From LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${Login_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:34.153" level="INFO">Opening url 'https://my.bonify.de/login?next=/'</msg>
+<status status="PASS" endtime="20181103 22:41:35.285" starttime="20181103 22:41:34.153"></status>
+</kw>
+<kw name="On LoginPage Click On Forgot Password Link" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Forgot Password Link is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:35.326" starttime="20181103 22:41:35.286"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Forgot Password Link is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:35.349" starttime="20181103 22:41:35.326"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:35.350" level="INFO">Clicking element 'xpath://a[contains(@href,'recover')]'.</msg>
+<status status="PASS" endtime="20181103 22:41:35.421" starttime="20181103 22:41:35.349"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:35.422" starttime="20181103 22:41:35.286"></status>
+</kw>
+<kw name="Verify User Navigated To Reset Password Page" library="LoginPage">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>5s</arg>
+<arg>Location Should be</arg>
+<arg>${Reset_Password_Page_URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Reset_Password_Page_URL}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181103 22:41:35.690" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Sanity/selenium-screenshot-2.png"&gt;&lt;img src="Screenshots/Sanity/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:35.690" starttime="20181103 22:41:35.429"></status>
+</kw>
+<msg timestamp="20181103 22:41:35.709" level="FAIL">Location should have been 'https://my.bonify.de/recover/send-email' but was 'https://my.bonify.de/recover'.</msg>
+<status status="FAIL" endtime="20181103 22:41:35.709" starttime="20181103 22:41:35.423"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Reset_Password_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:40.716" level="INFO">Current location is 'https://my.bonify.de/recover/send-email'.</msg>
+<status status="PASS" endtime="20181103 22:41:40.716" starttime="20181103 22:41:40.712"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:40.716" starttime="20181103 22:41:35.423"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current browser URL.</doc>
+<assign>
+<var>${Current_Page_URL}</var>
+</assign>
+<msg timestamp="20181103 22:41:40.721" level="INFO">${Current_Page_URL} = https://my.bonify.de/recover/send-email</msg>
+<status status="PASS" endtime="20181103 22:41:40.721" starttime="20181103 22:41:40.716"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Reset_Password_Page_URL}</arg>
+<arg>${Current_Page_URL}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:40.721" starttime="20181103 22:41:40.721"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:40.721" starttime="20181103 22:41:35.422"></status>
+</kw>
+<kw name="Capture webpage screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>Tc_02_Reset_Password_Page</arg>
+<arg>${Sanity_SS_Path}</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:40.723" starttime="20181103 22:41:40.722"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:40.969" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Sanity/Tc_02_Reset_Password_Page.png"&gt;&lt;img src="Screenshots/Sanity/Tc_02_Reset_Password_Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:40.970" starttime="20181103 22:41:40.723"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:40.970" starttime="20181103 22:41:40.722"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+<tag>Sanity</tag>
+<tag>TC 02</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:40.970" critical="yes" starttime="20181103 22:41:34.152"></status>
+</test>
+<test id="s1-s2-t3" name="Test Case Verify Registration Navigation From LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:40.974" level="INFO">Opening url 'http://my.bonify.de'</msg>
+<status status="PASS" endtime="20181103 22:41:41.908" starttime="20181103 22:41:40.973"></status>
+</kw>
+<kw name="On LoginPage Click On Registration Button" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Register_Button}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Registration button is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:41.940" starttime="20181103 22:41:41.910"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Register_Button}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Registration button is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:41.963" starttime="20181103 22:41:41.940"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Register_Button}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:41.963" level="INFO">Clicking element 'xpath://a[contains(@href,'register/email')]'.</msg>
+<status status="PASS" endtime="20181103 22:41:42.028" starttime="20181103 22:41:41.963"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:42.028" starttime="20181103 22:41:41.909"></status>
+</kw>
+<kw name="Verify User Navigated To Registration Page" library="LoginPage">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>5s</arg>
+<arg>Location Should be</arg>
+<arg>${Registration_Page_URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Registration_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:42.038" level="INFO">Current location is 'https://my.bonify.de/register/email'.</msg>
+<status status="PASS" endtime="20181103 22:41:42.038" starttime="20181103 22:41:42.030"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:42.038" starttime="20181103 22:41:42.030"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current browser URL.</doc>
+<assign>
+<var>${Current_Page_URL}</var>
+</assign>
+<msg timestamp="20181103 22:41:42.042" level="INFO">${Current_Page_URL} = https://my.bonify.de/register/email</msg>
+<status status="PASS" endtime="20181103 22:41:42.042" starttime="20181103 22:41:42.038"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Registration_Page_URL}</arg>
+<arg>${Current_Page_URL}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:42.043" starttime="20181103 22:41:42.043"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:42.043" starttime="20181103 22:41:42.029"></status>
+</kw>
+<kw name="Capture webpage screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>Tc_03_Registration_Page</arg>
+<arg>${Sanity_SS_Path}</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:42.044" starttime="20181103 22:41:42.044"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:42.291" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Sanity/Tc_03_Registration_Page.png"&gt;&lt;img src="Screenshots/Sanity/Tc_03_Registration_Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:42.291" starttime="20181103 22:41:42.044"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:42.291" starttime="20181103 22:41:42.044"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+<tag>Sanity</tag>
+<tag>TC 03</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:42.292" critical="yes" starttime="20181103 22:41:40.972"></status>
+</test>
+<test id="s1-s2-t4" name="Test Case Verify Impressum Navigation From LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:42.295" level="INFO">Opening url 'http://my.bonify.de'</msg>
+<status status="PASS" endtime="20181103 22:41:43.005" starttime="20181103 22:41:42.295"></status>
+</kw>
+<kw name="On LoginPage Click On Impressum Link" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Impressum_Link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Impressum Link is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:43.035" starttime="20181103 22:41:43.006"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Impressum_Link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Impressum Link is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:43.057" starttime="20181103 22:41:43.035"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Impressum_Link}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:43.057" level="INFO">Clicking element 'xpath://a[contains(@href,'bonify.de/impressum')]'.</msg>
+<status status="PASS" endtime="20181103 22:41:43.132" starttime="20181103 22:41:43.057"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:43.132" starttime="20181103 22:41:43.006"></status>
+</kw>
+<kw name="Verify User Navigated To Impressum Page" library="LoginPage">
+<kw name="List Windows" library="Selenium2Library">
+<doc>Deprecated. Use `Get Window Handles` instead.</doc>
+<assign>
+<var>@{windows}</var>
+</assign>
+<msg timestamp="20181103 22:41:43.137" level="INFO">@{windows} = [ CDwindow-5EFA6CFE98DBC5B43F29530E0587E039 | CDwindow-0998F423833B99381DA87D478B5DD3B8 ]</msg>
+<status status="PASS" endtime="20181103 22:41:43.137" starttime="20181103 22:41:43.134"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${windows}</arg>
+</arguments>
+<assign>
+<var>${numWindows}</var>
+</assign>
+<msg timestamp="20181103 22:41:43.138" level="INFO">Length is 2</msg>
+<msg timestamp="20181103 22:41:43.138" level="INFO">${numWindows} = 2</msg>
+<status status="PASS" endtime="20181103 22:41:43.139" starttime="20181103 22:41:43.138"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${numWindows} &gt; 1</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:43.140" starttime="20181103 22:41:43.139"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>@{windows}[1]</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:43.195" starttime="20181103 22:41:43.140"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Impressum_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:52.776" level="INFO">Current location is 'https://www.bonify.de/impressum'.</msg>
+<status status="PASS" endtime="20181103 22:41:52.777" starttime="20181103 22:41:43.195"></status>
+</kw>
+<kw name="Close Window" library="Selenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20181103 22:41:52.833" starttime="20181103 22:41:52.777"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>@{windows}[0]</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:52.840" starttime="20181103 22:41:52.834"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Login_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:52.846" level="INFO">Current location is 'https://my.bonify.de/login?next=/'.</msg>
+<status status="PASS" endtime="20181103 22:41:52.846" starttime="20181103 22:41:52.840"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:52.846" starttime="20181103 22:41:43.133"></status>
+</kw>
+<kw name="Capture webpage screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>Tc_04_Impressum_Page</arg>
+<arg>${Sanity_SS_Path}</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:52.848" starttime="20181103 22:41:52.847"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:53.105" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Sanity/Tc_04_Impressum_Page.png"&gt;&lt;img src="Screenshots/Sanity/Tc_04_Impressum_Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:53.105" starttime="20181103 22:41:52.848"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:53.105" starttime="20181103 22:41:52.847"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+<tag>Sanity</tag>
+<tag>TC 04</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:53.106" critical="yes" starttime="20181103 22:41:42.293"></status>
+</test>
+<test id="s1-s2-t5" name="Test Case Verify AGB Navigation From LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:53.110" level="INFO">Opening url 'http://my.bonify.de'</msg>
+<status status="PASS" endtime="20181103 22:41:53.730" starttime="20181103 22:41:53.109"></status>
+</kw>
+<kw name="On LoginPage Click On AGB Link" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${AGB_Link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=AGB Link is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:53.761" starttime="20181103 22:41:53.731"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${AGB_Link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=AGB Link is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:53.784" starttime="20181103 22:41:53.761"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${AGB_Link}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:53.784" level="INFO">Clicking element 'xpath://a[contains(@href,'bonify.de/agb')]'.</msg>
+<status status="PASS" endtime="20181103 22:41:53.864" starttime="20181103 22:41:53.784"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:53.864" starttime="20181103 22:41:53.730"></status>
+</kw>
+<kw name="Verify User Navigated To AGB Page" library="LoginPage">
+<kw name="List Windows" library="Selenium2Library">
+<doc>Deprecated. Use `Get Window Handles` instead.</doc>
+<assign>
+<var>@{windows}</var>
+</assign>
+<msg timestamp="20181103 22:41:53.868" level="INFO">@{windows} = [ CDwindow-5EFA6CFE98DBC5B43F29530E0587E039 | CDwindow-B3594E702E1982BF01F1C7AAEB529BFE ]</msg>
+<status status="PASS" endtime="20181103 22:41:53.868" starttime="20181103 22:41:53.865"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${windows}</arg>
+</arguments>
+<assign>
+<var>${numWindows}</var>
+</assign>
+<msg timestamp="20181103 22:41:53.869" level="INFO">Length is 2</msg>
+<msg timestamp="20181103 22:41:53.869" level="INFO">${numWindows} = 2</msg>
+<status status="PASS" endtime="20181103 22:41:53.869" starttime="20181103 22:41:53.869"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${numWindows} &gt; 1</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:53.870" starttime="20181103 22:41:53.870"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>@{windows}[1]</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:53.928" starttime="20181103 22:41:53.871"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${AGB_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:59.002" level="INFO">Current location is 'https://www.bonify.de/agb'.</msg>
+<status status="PASS" endtime="20181103 22:41:59.002" starttime="20181103 22:41:53.929"></status>
+</kw>
+<kw name="Close Window" library="Selenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20181103 22:41:59.060" starttime="20181103 22:41:59.003"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>@{windows}[0]</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:59.067" starttime="20181103 22:41:59.060"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Login_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:59.072" level="INFO">Current location is 'https://my.bonify.de/login?next=/'.</msg>
+<status status="PASS" endtime="20181103 22:41:59.073" starttime="20181103 22:41:59.067"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:59.073" starttime="20181103 22:41:53.865"></status>
+</kw>
+<kw name="Capture webpage screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>Tc_05_AGB_Page</arg>
+<arg>${Sanity_SS_Path}</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:59.074" starttime="20181103 22:41:59.074"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:59.336" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Sanity/Tc_05_AGB_Page.png"&gt;&lt;img src="Screenshots/Sanity/Tc_05_AGB_Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:41:59.336" starttime="20181103 22:41:59.074"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:59.336" starttime="20181103 22:41:59.073"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+<tag>Sanity</tag>
+<tag>TC 05</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:41:59.337" critical="yes" starttime="20181103 22:41:53.108"></status>
+</test>
+<test id="s1-s2-t6" name="Test Case Verify Datenschutz Navigation From LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:59.340" level="INFO">Opening url 'http://my.bonify.de'</msg>
+<status status="PASS" endtime="20181103 22:41:59.862" starttime="20181103 22:41:59.339"></status>
+</kw>
+<kw name="On LoginPage Click On Datenschutz Link" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Datenschutz_Link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Datenschutz Link is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:59.893" starttime="20181103 22:41:59.863"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Datenschutz_Link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Datenschutz Link is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:41:59.916" starttime="20181103 22:41:59.893"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Datenschutz_Link}</arg>
+</arguments>
+<msg timestamp="20181103 22:41:59.916" level="INFO">Clicking element 'xpath://a[contains(@href,'bonify.de/datenschutz')]'.</msg>
+<status status="PASS" endtime="20181103 22:41:59.992" starttime="20181103 22:41:59.916"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:41:59.992" starttime="20181103 22:41:59.863"></status>
+</kw>
+<kw name="Verify User Navigated To Datenschutz Page" library="LoginPage">
+<kw name="List Windows" library="Selenium2Library">
+<doc>Deprecated. Use `Get Window Handles` instead.</doc>
+<assign>
+<var>@{windows}</var>
+</assign>
+<msg timestamp="20181103 22:41:59.998" level="INFO">@{windows} = [ CDwindow-5EFA6CFE98DBC5B43F29530E0587E039 | CDwindow-C69B494FEC8A051FC047F657C8692582 ]</msg>
+<status status="PASS" endtime="20181103 22:41:59.998" starttime="20181103 22:41:59.994"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${windows}</arg>
+</arguments>
+<assign>
+<var>${numWindows}</var>
+</assign>
+<msg timestamp="20181103 22:41:59.999" level="INFO">Length is 2</msg>
+<msg timestamp="20181103 22:41:59.999" level="INFO">${numWindows} = 2</msg>
+<status status="PASS" endtime="20181103 22:41:59.999" starttime="20181103 22:41:59.998"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${numWindows} &gt; 1</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:42:00.000" starttime="20181103 22:42:00.000"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>@{windows}[1]</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:42:00.057" starttime="20181103 22:42:00.001"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${datenschutz_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:42:09.129" level="INFO">Current location is 'https://www.bonify.de/datenschutz'.</msg>
+<status status="PASS" endtime="20181103 22:42:09.129" starttime="20181103 22:42:00.057"></status>
+</kw>
+<kw name="Close Window" library="Selenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20181103 22:42:09.155" starttime="20181103 22:42:09.129"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>@{windows}[0]</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:42:09.169" starttime="20181103 22:42:09.155"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Login_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 22:42:09.175" level="INFO">Current location is 'https://my.bonify.de/login?next=/'.</msg>
+<status status="PASS" endtime="20181103 22:42:09.175" starttime="20181103 22:42:09.169"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:42:09.176" starttime="20181103 22:41:59.993"></status>
+</kw>
+<kw name="Capture webpage screenshot" library="GeneralConfigurations">
+<arguments>
+<arg>Tc_06_Datenschutz_Page</arg>
+<arg>${Sanity_SS_Path}</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 22:42:09.178" starttime="20181103 22:42:09.177"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${File_Name}.${Screenshot_File_Type}</arg>
+</arguments>
+<msg timestamp="20181103 22:42:09.441" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Sanity/Tc_06_Datenschutz_Page.png"&gt;&lt;img src="Screenshots/Sanity/Tc_06_Datenschutz_Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 22:42:09.441" starttime="20181103 22:42:09.178"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:42:09.441" starttime="20181103 22:42:09.176"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+<tag>Sanity</tag>
+<tag>TC 06</tag>
+</tags>
+<status status="PASS" endtime="20181103 22:42:09.441" critical="yes" starttime="20181103 22:41:59.339"></status>
+</test>
+<kw type="teardown" name="Tear Down - Smoke Suite">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181103 22:42:11.670" starttime="20181103 22:42:09.444"></status>
+</kw>
+<status status="PASS" endtime="20181103 22:42:11.671" starttime="20181103 22:42:09.444"></status>
+</kw>
+<doc>This file is the collection all the Sanity test cases
+Teminal command to run the test suite :
+robot -d OptionalTest &lt;BonfiyQATestRobot folder path&gt;/TestSuites/SanityTest.robot
+Output screenshots are stored in '/Screenshots/Sanity' folder in the project
+Log &amp; Reports are generated in '/result' folder in the project</doc>
+<status status="PASS" endtime="20181103 22:42:11.671" starttime="20181103 22:41:19.550"></status>
+</suite>
+<status status="PASS" endtime="20181103 22:42:11.685" starttime="20181103 22:40:54.947"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="17">Critical Tests</stat>
+<stat fail="0" pass="17">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="6">Positive</stat>
+<stat fail="0" pass="6">Sanity</stat>
+<stat fail="0" pass="11">Smoke</stat>
+<stat fail="0" pass="2">TC 01</stat>
+<stat fail="0" pass="2">TC 02</stat>
+<stat fail="0" pass="2">TC 03</stat>
+<stat fail="0" pass="2">TC 04</stat>
+<stat fail="0" pass="2">TC 05</stat>
+<stat fail="0" pass="2">TC 06</stat>
+<stat fail="0" pass="1">TC 07</stat>
+<stat fail="0" pass="1">TC 08</stat>
+<stat fail="0" pass="1">TC 09</stat>
+<stat fail="0" pass="1">TC 10</stat>
+<stat fail="0" pass="1">TC 11</stat>
+<stat fail="0" pass="11">UI</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="SmokeTest &amp; SanityTest" pass="17">SmokeTest &amp; SanityTest</stat>
+<stat fail="0" id="s1-s1" name="SmokeTest" pass="11">SmokeTest &amp; SanityTest.SmokeTest</stat>
+<stat fail="0" id="s1-s2" name="SanityTest" pass="6">SmokeTest &amp; SanityTest.SanityTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

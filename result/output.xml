@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181103 19:09:41.168" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite source="C:\Users\rnavakoti\PycharmProjects\BonifyQATestRobot\TestSuites\Optionaltest.robot" id="s1" name="Optionaltest">
+<kw type="setup" name="Set Up - Smoke Suite">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20181103 19:09:41.325" level="INFO">Opening browser 'chrome' to base url 'http://my.bonify.de'.</msg>
+<status status="PASS" endtime="20181103 19:09:49.272" starttime="20181103 19:09:41.325"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181103 19:09:49.389" starttime="20181103 19:09:49.273"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:09:49.389" starttime="20181103 19:09:41.325"></status>
+</kw>
+<test id="s1-t1" name="Test Case Verify when user enters valid email id on reset password screen he receives success message on next screen">
+<kw name="On LoginPage Click On Forgot Password Link" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Forgot Password Link is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:09:49.424" starttime="20181103 19:09:49.391"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Forgot Password Link is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:09:49.444" starttime="20181103 19:09:49.424"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Forgot_Password_link}</arg>
+</arguments>
+<msg timestamp="20181103 19:09:49.445" level="INFO">Clicking element 'xpath://a[contains(@href,'recover')]'.</msg>
+<status status="PASS" endtime="20181103 19:09:49.512" starttime="20181103 19:09:49.445"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:09:49.512" starttime="20181103 19:09:49.390"></status>
+</kw>
+<kw name="Verify User Navigated To Reset Password Page" library="LoginPage">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>5s</arg>
+<arg>Location Should be</arg>
+<arg>${Reset_Password_Page_URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Reset_Password_Page_URL}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181103 19:09:49.771" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 19:09:49.772" starttime="20181103 19:09:49.519"></status>
+</kw>
+<msg timestamp="20181103 19:09:49.773" level="FAIL">Location should have been 'https://my.bonify.de/recover/send-email' but was 'https://my.bonify.de/recover'.</msg>
+<status status="FAIL" endtime="20181103 19:09:49.774" starttime="20181103 19:09:49.514"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${Reset_Password_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 19:09:54.781" level="INFO">Current location is 'https://my.bonify.de/recover/send-email'.</msg>
+<status status="PASS" endtime="20181103 19:09:54.782" starttime="20181103 19:09:54.776"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:09:54.782" starttime="20181103 19:09:49.513"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current browser URL.</doc>
+<assign>
+<var>${Current_Page_URL}</var>
+</assign>
+<msg timestamp="20181103 19:09:54.786" level="INFO">${Current_Page_URL} = https://my.bonify.de/recover/send-email</msg>
+<status status="PASS" endtime="20181103 19:09:54.786" starttime="20181103 19:09:54.782"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Reset_Password_Page_URL}</arg>
+<arg>${Current_Page_URL}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:09:54.787" starttime="20181103 19:09:54.786"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:09:54.787" starttime="20181103 19:09:49.513"></status>
+</kw>
+<kw name="On ResetPasswordPage Enter User Name" library="ResetPasswordPage">
+<arguments>
+<arg>${Valid_User_Name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ResetPage_User_Name}</arg>
+<arg>timeout=10s</arg>
+<arg>error=User Name Text Box is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:09:54.818" starttime="20181103 19:09:54.788"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${ResetPage_User_Name}</arg>
+<arg>timeout=10s</arg>
+<arg>error=User Name Text Box is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:09:54.842" starttime="20181103 19:09:54.818"></status>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${ResetPage_User_Name}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:09:54.877" starttime="20181103 19:09:54.842"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ResetPage_User_Name}</arg>
+<arg>${User_Name}</arg>
+</arguments>
+<msg timestamp="20181103 19:09:54.878" level="INFO">Typing text 'rajaprabhas455@gmail.com' into text field 'xpath://input[@name='email']'.</msg>
+<status status="PASS" endtime="20181103 19:09:55.108" starttime="20181103 19:09:54.878"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:09:55.108" starttime="20181103 19:09:54.787"></status>
+</kw>
+<kw name="On ResetPasswordPage Click On Submit Button" library="ResetPasswordPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ResetPage_Submit_Button}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Submit button is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:09:55.137" starttime="20181103 19:09:55.109"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${ResetPage_Submit_Button}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Submit button is not enabled</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:09:55.159" starttime="20181103 19:09:55.138"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${ResetPage_Submit_Button}</arg>
+</arguments>
+<msg timestamp="20181103 19:09:55.160" level="INFO">Clicking element 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" endtime="20181103 19:09:55.242" starttime="20181103 19:09:55.160"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:09:55.242" starttime="20181103 19:09:55.109"></status>
+</kw>
+<kw name="Verify User Navigated To CheckEmail Page" library="ResetPasswordPage">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>5s</arg>
+<arg>Location Should be</arg>
+<arg>${CheckEmail_Page_URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${CheckEmail_Page_URL}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181103 19:09:55.533" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181103 19:09:55.533" starttime="20181103 19:09:55.253"></status>
+</kw>
+<msg timestamp="20181103 19:09:55.533" level="FAIL">Location should have been 'https://my.bonify.de/recover/check-email' but was 'https://my.bonify.de/recover/send-email'.</msg>
+<status status="FAIL" endtime="20181103 19:09:55.534" starttime="20181103 19:09:55.245"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${CheckEmail_Page_URL}</arg>
+</arguments>
+<msg timestamp="20181103 19:10:00.538" level="INFO">Current location is 'https://my.bonify.de/recover/check-email'.</msg>
+<status status="PASS" endtime="20181103 19:10:00.538" starttime="20181103 19:10:00.534"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:10:00.538" starttime="20181103 19:09:55.244"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current browser URL.</doc>
+<assign>
+<var>${Current_Page_URL}</var>
+</assign>
+<msg timestamp="20181103 19:10:00.543" level="INFO">${Current_Page_URL} = https://my.bonify.de/recover/check-email</msg>
+<status status="PASS" endtime="20181103 19:10:00.543" starttime="20181103 19:10:00.539"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${CheckEmail_Page_URL}</arg>
+<arg>${Current_Page_URL}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:10:00.544" starttime="20181103 19:10:00.543"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:10:00.544" starttime="20181103 19:09:55.243"></status>
+</kw>
+<kw name="Verify success message received on CheckEmail Page" library="ResetPasswordPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${New_Password_Header}</arg>
+<arg>timeout=10s</arg>
+<arg>error=New Password Header is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:10:00.575" starttime="20181103 19:10:00.545"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Passord_Reset_Success_Message}</arg>
+<arg>timeout=10s</arg>
+<arg>error=Password Reset Success Message is not visible</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:10:00.603" starttime="20181103 19:10:00.575"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Passord_Reset_Success_Message}</arg>
+</arguments>
+<assign>
+<var>${Actual_Reset__Password_Success_Message}</var>
+</assign>
+<msg timestamp="20181103 19:10:00.628" level="INFO">${Actual_Reset__Password_Success_Message} = Vielen Dank! Wenn diese Email-Adresse bei bonify hinterlegt ist, haben wir eine Email mit einem Link zum Zurücksetzen des Passwortes verschickt. Diese sollte in den nächsten Sekunden bei Dir eintreffe...</msg>
+<status status="PASS" endtime="20181103 19:10:00.629" starttime="20181103 19:10:00.603"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Actual_Reset_Password_Success_Message}</arg>
+<arg>${Expected_Reset_Password_Success_Message}</arg>
+</arguments>
+<status status="PASS" endtime="20181103 19:10:00.629" starttime="20181103 19:10:00.629"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:10:00.629" starttime="20181103 19:10:00.544"></status>
+</kw>
+<tags>
+<tag>Data validation on next screen</tag>
+<tag>Optional</tag>
+<tag>TC 01</tag>
+</tags>
+<status status="PASS" endtime="20181103 19:10:00.630" critical="yes" starttime="20181103 19:09:49.389"></status>
+</test>
+<kw type="teardown" name="Tear Down - Smoke Suite">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181103 19:10:02.819" starttime="20181103 19:10:00.634"></status>
+</kw>
+<status status="PASS" endtime="20181103 19:10:02.819" starttime="20181103 19:10:00.634"></status>
+</kw>
+<doc>Suite description</doc>
+<status status="PASS" endtime="20181103 19:10:02.819" starttime="20181103 19:09:41.172"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Data validation on next screen</stat>
+<stat fail="0" pass="1">Optional</stat>
+<stat fail="0" pass="1">TC 01</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Optionaltest" pass="1">Optionaltest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
