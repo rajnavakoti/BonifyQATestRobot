@@ -28,6 +28,8 @@
   b.Check robot installation. To check run 'robot --version' from terminal
  3.Install Selenium Library for robot
   a.run command 'pip install robotframework-seleniumLibrary' from terminal
+ 4.Download geckodriver from https://github.com/mozilla/geckodriver/releases
+   Add geckodriver.exe path to system environment variables
   
  
 ### Script execution Details ###
@@ -45,7 +47,7 @@
  4. To run All test cases
     robot <BonifyQATestRobot folder path>/TestSuites/SmokeTest.robot <BonifyQATestRobot folder path>/TestSuites/SanityTest.robot <BonifyQATestRobot folder path>/TestSuites/RegressionTest.robot
 	
-   ### Question 3 / Task 3 Execution ###
+   ### Question 3 / Task 3 / Optional Test Execution ###
    
  1. To run Task 3 optional test 
     robot <BonifyQATestRobot folder path>/TestSuites/OptionalTest.robot
